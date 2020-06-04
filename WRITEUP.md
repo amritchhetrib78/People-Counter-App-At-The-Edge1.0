@@ -361,11 +361,11 @@ The main.py() sends statistics- total people count, frame-wise People count and 
 Video File, Video Streams or picture file to FFMeg Server and which are displayed through Web- Application with Box indicating People on input
 file. On running this App for with sample Video, I/we received following Data Communications:
 
-UI Server Logs:
+Mosca/Node Server Logs:
 ![](images/MoscaServer.png)
 
-Images Frames to FFmpeg Server :
-![](images/FFMegServer.png)
+UI Server Logs :
+![](images/UIServerLog.png)
 
 Disclaimer: This is Writeup for People Counter Apps 
 
