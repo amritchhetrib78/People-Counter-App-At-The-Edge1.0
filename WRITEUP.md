@@ -357,7 +357,7 @@ To access the Web Application from Workspace, click on Open App , if does not op
 
 ### People Counter App Mechanism:
 Successful running of this Apps generates three sets of Data- Statistics to MQTT Server, Images Frames to FFmeg Server and UI Server logs.
-The main.py() sends statistics- total people count, frame-wise People count and durations to MQTT Server as JSON Data and frames of given 
+The main.py() sends statistics- total people count, frame-wise People count and durations to MQTT Server as JSON Data and frames of given  
 Video File, Video Streams or picture file to FFMeg Server and which are displayed through Web- Application with Box indicating People on input
 file. On running this App for with sample Video, I/we received following Data Communications:
 
