@@ -1,7 +1,7 @@
 # Deploy a People Counter App at the Edge
 [![IMAGE ALT TEXT HERE](./images/people-counter-image.png)](https://www.youtube.com/watch?v=gjxRXuFpfgU)
 
-Click the image above to see a video of the demo or use the link [here](https://www.youtube.com/watch?v=gjxRXuFpfgU)
+THE DETAILS ARE GIVEN BELOW AND REFER [THIS](https://youtu.be/7DzJBIEFPeY) TO DEPLOY ON INTEL [COMPUTE STICK](https://www.youtube.com/watch?v=sTjm5v4OI_A)
 
 ## What it Does
 
