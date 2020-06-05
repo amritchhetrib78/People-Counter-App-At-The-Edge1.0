@@ -45,9 +45,9 @@ Utilize the classroom workspace, or refer to the relevant instructions for your 
 
 Utilize the classroom workspace, or refer to the relevant instructions for your operating system for this step.
 
-- [Linux/Ubuntu](./linux-setup.md)
-- [Mac](./mac-setup.md)
-- [Windows](./windows-setup.md)
+- [Linux/Ubuntu](./linux-setup1.0.md)
+- [Mac](./mac-setup1.0.md)
+- [Windows](./windows-setup1.0.md)
 
 ### Install npm
 
