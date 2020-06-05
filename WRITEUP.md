@@ -40,8 +40,7 @@ Here are further details on two Custom Layer components:
   Typically the input layer parameters are unchanged, which is the case covered by this Writeup.
 
 2. Custom Layer Operation:
-   This is responsible for specifying attributes that are supported by the Custom Layer and computing the output shape for each instance of 
-   the custom layer from its parameters. The '--mo-op' command-line argument, shown in the examples below generates a custom layer 
+   This is responsible for specifying attributes that are supported by the Custom Layer and computing the output shape for each instance of the custom layer from its parameters. The '--mo-op' command-line argument, shown in the examples below generates a custom layer 
    operation for the Model Optimizer.
 
 #### Inference Engine :
@@ -66,14 +65,12 @@ a custom layer. Here are further details on two Custom Layer Extensions:
    file ('.xml') needed by the GPU Plugin for the custom layer kernel.
 
 #### Using Model Extension Generator:
-	Model Extension Generator tool generates template source code files for each of the extensions needed by the Model Optimizer and 
-	Inference Engine. Its script is available here-  '/opt/intel/openvino/deployment_tools/tools/extension_generator/extgen.py'
-    The necessary details are given below:
-'''
-usage: You can use any combination of the following arguments:
+Model Extension Generator tool generates template source code files for each of the extensions needed by the Model Optimizer and 
+Inference Engine. Its script is available here-  '/opt/intel/openvino/deployment_tools/tools/extension_generator/extgen.py'
+The necessary details are given below:
 
+```
 Arguments to configure extension generation in the interactive mode:
-
 optional arguments:
   -h, --help            show this help message and exit
   --mo-caffe-ext        generate a Model Optimizer Caffe* extractor
@@ -85,18 +82,17 @@ optional arguments:
   --output_dir OUTPUT_DIR
                         set an output directory. If not specified, the current
                         directory is used by default.
-'''
+```
 
 ### Reasons for handling Custom Layers:
-    The Custom Layers Handling is required to convert custom layers as an organization/individual need to develop something new or 
-	to research on new innovations and the application requires to work smoothly supporting custom layers.
-	Another common use case would be use of 'Lambda' layers, which(layers) are where arbitrary piece of codes are added to model 
-	implementation.
+The Custom Layers Handling is required to convert custom layers as an organization/individual need to develop something new or 
+to research on new innovations and the application requires to work smoothly supporting custom layers.
+Another common use case would be use of 'Lambda' layers, which(layers) are where arbitrary piece of codes are added to model 
+implementation.
 
 ## Comparing Model Performance:
-    I tested different AI Models which are not pre-optimized and ended up using one of the models from Intel OpenVino Model Zoo 
-	, due to poor performance of other converted models.In this exercise, I focused on Model Accuracy and Inference time and Matrices included. 
-	I have also stated all models I experimented and tested with necessary arguments/parameters. For further details, see the well researched summary below:
+I tested different AI Models which are not pre-optimized and ended up using one of the models from Intel OpenVino Model Zoo 
+, due to poor performance of other converted models.In this exercise, I focused on Model Accuracy and Inference time and Matrices included. I have also stated all models I experimented and tested with necessary arguments/parameters. For further details, see the well researched summary below:
 	
 
 ### Model size
