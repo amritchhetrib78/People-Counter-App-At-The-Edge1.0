@@ -368,7 +368,8 @@ Mosca/Node Server Logs:
 UI Server Logs :
 ![](images/UIServerLog.png)
 
-#####Disclaimer: This is Writeup for People Counter Apps 
+#####
+Disclaimer: This is Writeup for People Counter Apps 
 
 
 
