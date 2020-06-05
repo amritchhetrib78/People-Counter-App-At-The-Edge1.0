@@ -112,8 +112,7 @@ optional arguments:
 |Before Conversion|53 ms|150 ms|56 ms|
 |After Conversion |59 ms|153 ms|61 ms|
 
-
-## Assess Model Use Cases :
+### Assess Model Use Cases :
   Based on features and supports available with the selected AI Model, I consider following areas where People Counter Application can be used - with or without''
   necessary customizations:
   
@@ -212,10 +211,10 @@ However, this can be avoided with good hardware that process images from poorly 
   - [Model Source](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md)
   - I converted the model to an Intermediate Representation with the following arguments
   
-'''
+```
 python mo_tf.py --input_model frozen_inference_graph.pb --tensorflow_object_detection_api_pipeline_config pipeline.config --reverse_input_channels --tensorflow_use_custom_operations_config extensions/front/tf/ssd_v2_support.json
 
-'''
+```
 
   - The model was insufficient for this Application because it wasn't adequate accurate while doing inference. 
   - To improve, tried using some transfer learning techniques and retrained few of the model layers with some additional data but 
