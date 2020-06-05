@@ -202,7 +202,7 @@ However, this can be avoided with good hardware that process images from poorly 
    To find the suitable AI Model for People Counter App, I started with pre-trained models having People Counter features and those models are:
    * [Model Source](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md)
    * [SSD Inception V2](http://download.tensorflow.org/models/object_detection/ssd_inception_v2_coco_2018_01_28.tar.gz)
-   * [Person Detection- Retail-0002] (https://docs.openvinotoolkit.org/latest/person-detection-retail-0002.html)
+   * [Person Detection- Retail-0002](https://docs.openvinotoolkit.org/latest/person-detection-retail-0002.html)
    * [SSD Coco Mobilenet v1]( http://download.tensorflow.org/models/object_detection/ssd_inception_v2_coco_2018_01_28.tar.gz)	
    * [Person Detection Retail-0013]( https://docs.openvinotoolkit.org/latest/_models_intel_person_detection_retail_0013_description_person_detection_retail_0013.html)
    * [Pedestrian Detection Adas 002](https://docs.openvinotoolkit.org/2019_R1/_pedestrian_detection_adas_0002_description_pedestrian_detection_adas_0002.html )
