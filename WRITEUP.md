@@ -11,7 +11,7 @@ each layer in Input Model. The Inference Engine, then, loads the Layers from Inp
 which further searches all known Layer implementations for the device. If the model architecture contains layer or layers that are not in the 
 list of known layers, the Inference Engine considers that/them be unsupported and alerts for errors. To know supported layers, refer
 [Supported Devices documentation](https://docs.openvinotoolkit.org/2019_R1.1/_docs_IE_DG_supported_plugins_Supported_Devices.html) and 
-to know Intermediate Representations explore [ https://docs.openvinotoolkit.org/latest/_docs_MO_DG_prepare_model_convert_model_Converting_Model.html]
+to explor [Intermediate Representations](https://docs.openvinotoolkit.org/latest/_docs_MO_DG_prepare_model_convert_model_Converting_Model.html)
 
 
 ### Custom Layers Implementation:
