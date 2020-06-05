@@ -224,9 +224,9 @@ python mo_tf.py --input_model frozen_inference_graph.pb --tensorflow_object_dete
   - [Model Source](http://download.tensorflow.org/models/object_detection/ssd_inception_v2_coco_2018_01_28.tar.gz)
   - I converted the model to an Intermediate Representation with the following arguments
   
-'''
+```
 python mo_tf.py --input_model frozen_inference_graph.pb --tensorflow_object_detection_api_pipeline_config pipeline.config --reverse_input_channels --tensorflow_use_custom_operations_config extensions/front/tf/ssd_v2_support.json
-'''
+```
   
   - The model was insufficient for the app because it has pretty high latency in making predictions ~155 ms.
   - I tried to improve the model for the app by reducing the precision of weights, however this had a very huge impact on the accuracy.
@@ -235,10 +235,10 @@ python mo_tf.py --input_model frozen_inference_graph.pb --tensorflow_object_dete
   - [Model Source](http://download.tensorflow.org/models/object_detection/ssd_inception_v2_coco_2018_01_28.tar.gz)
   - I converted the model to an Intermediate Representation with the following arguments
 
-'''
+```
 python mo_tf.py --input_model frozen_inference_graph.pb --tensorflow_object_detection_api_pipeline_config pipeline.config --reverse_input_channels --tensorflow_use_custom_operations_config extensions/front/tf/ssd_v2_support.json
 
-'''
+```
   - The model was suitable for the app because it has a very low Inference Accuracy. It was unable to identify people with their back 
   facing towards the camera making this model unusable.
   
@@ -246,10 +246,10 @@ python mo_tf.py --input_model frozen_inference_graph.pb --tensorflow_object_dete
   - [Model Source](https://docs.openvinotoolkit.org/2019_R1/_pedestrian_detection_adas_0002_description_pedestrian_detection_adas_0002.html )
   - I converted the model to an Intermediate Representation with the following arguments
 
-'''
+```
 python mo_tf.py --input_model pedestrian_detection_adas_0002.pb --tensorflow_object_detection_api_pipeline_config pipeline.config --reverse_input_channels --tensorflow_use_custom_operations_config extensions/front/tf/ssd_v2_support.json
 
-'''  
+```
 
 ## The Model:
 To over come challenges mentioned identified or collected during AI Model Research Analysis, I decided to use an AI Model/s written below for People Counter App. They available at 
@@ -266,33 +266,33 @@ for People Counter App.
 
 Download all the pre-requisite libraries and performed source the OpenVINO installation using the following commands:
 
-''' sh
+``` sh
 pip install requests pyyaml -t /usr/local/lib/python3.5/dist-packages && clear && 
 source /opt/intel/openvino/bin/setupvars.sh -pyver 3.5
 
-'''
+```
 
 Navigate to the directory containing the Model Downloader:
 
-''' sh
+``` sh
 cd /opt/intel/openvino/deployment_tools/open_model_zoo/tools/Downloader
 source /opt/intel/openvino/bin/setupvars.sh -pyver 3.5 -- initializing env
 
-'''
+```
 
 Here, firstly, I displayed the available models using
 
-''' sh
+``` sh
 sudo ./downloader.py --print_all
 
-'''
+```
 And, performed optimized download using other arguments '-h' and '--name' and precisions as shown below
 
-''' sh
+``` sh
 wget http://download.tensorflow.org/models/object_detection/faster_rcnn_inception_v2_coco_2018_01_28.tar.gz
 python /opt/intel/openvino/deployment_tools/model_optimizer/mo.py --input_model frozen_inference_graph.pb --tensorflow_object_detection_api_pipeline_config pipeline.config --reverse_input_channels --tensorflow_use_custom_operations_config /opt/intel/openvino/deployment_tools/model_optimizer/extensions/front/tf/faster_rcnn_support.json
 
-'''
+```
 
 
 ## Performing Inference :
@@ -301,62 +301,62 @@ given sequence
 
 Installing Npm Package:
 
-''' sh
+``` sh
   cd webservice/server
   npm install
   
-'''
+```
 
-'''
+```
   cd node-server
   npm install mosca
   
-'''
+```
 
 After installing npm and mosca, execute commands below to start Mosca Server :
 
-''' sh
+``` sh
   cd node-server
   node ./server.js
   
-'''
+```
 
 On successful startup, you should receive a message-
 
-'''sh
+```sh
 Mosca Server Started and Terminal became ready to display - People Count/Frame, Time Spent and Total People Count.
 
-'''
+```
 
 Now, open second Terminal and execute following commands 
 
-''' sh
+``` sh
 cd webservice/ui
 npm install
 
-'''
+```
 After installing npm for UI, execute the commands below to start UI Server:
-''' sh
+``` sh
 npm run dev
 
-'''
+```
 On successful startup, you should receive a message-
-''' sh
+``` sh
 webpack: Compiled successfully
 
-'''
+```
 And then, open third terminal and execute FFMeg Server:
 
-''' sh
+``` sh
 sudo ffserver -f ./ffmpeg/server.conf
-'''
+```
 Finally, open the fourth Terminal and execute main.py with necessary arguments , as shown below to use testing video from 'resource/' folder and
 it uses port number '3004'.
 
-'''
+```
 python main.py -i resources/Pedestrian_Detect_2_1_1.mp4 -m faster_rcnn_inception_v2_coco_2018_01_28/frozen_inference_graph.xml -l /opt/intel/openvino/deployment_tools/inference_engine/lib/intel64/libcpu_extension_sse4.so -d CPU -pt 0.4 | ffmpeg -v warning -f rawvideo -pixel_format bgr24 -video_size 768x432 -framerate 24 -i - http://0.0.0.0:3004/fac.ffm
 
-'''
+```
 
 To access the Web Application from Workspace, click on Open App , if does not opened automatically.
 
