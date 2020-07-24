@@ -369,7 +369,7 @@ UI Server Logs :
 ![](images/UIServerLog.png)
 
 #####
-Prepared by: Amrit Chhetri, Copyright(C): MIT/GNU License , May 23,2020 |||
+Fnalized  for Project submission!
 
 
 
