@@ -1,4 +1,5 @@
 # Deploy a People Counter App at the Edge
+A People Counter App is optimized to run with minimal latency on the Edge Devices. The model used is optimized with Intel Open Vino Toolkit , Intel version of OpenVINO Toolkit. The codebase given inside the Repository also demonstrates how AI Model Inference takes place with a Video and needed parameters for a single picture or Video Streams from Cameras.
 [![IMAGE ALT TEXT HERE](./images/people-counter-image.png)](https://www.youtube.com/watch?v=gjxRXuFpfgU)
 THE DETAILS ARE GIVEN INSIDE [WRITEUP](https://github.com/amritchhetrib78/People-Counter-App-At-The-Edge1.0/blob/master/WRITEUP.md) TO DEPLOY ON INTEL [COMPUTE STICK](https://www.youtube.com/watch?v=sTjm5v4OI_A)
 
