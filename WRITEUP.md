@@ -369,7 +369,7 @@ UI Server Logs :
 ![](images/UIServerLog.png)
 
 #####
-Disclaimer: This is Writeup for People Counter Apps 
+Wriiten by: Amrit Chhetri 
 
 
 
