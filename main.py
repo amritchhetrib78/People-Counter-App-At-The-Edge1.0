@@ -158,6 +158,7 @@ def infer_on_stream(args, client):
 
         ### TODO: Wait for the result ###
         if infer_network.wait() == 0:
+			flag = 0
 			det_time = time.time() - int_start
 
             ### TODO: Get the results of the inference request ###
@@ -165,23 +166,22 @@ def infer_on_stream(args, client):
 
             ### TODO: Extract any desired stats from the results ###
 			         
-            pointer = 0
+            
             probs = net_output[0, 0, :, 2]
-            for i, p in enumerate(probs):
+            for ax, p in enumerate(probs):
                 if p > prob_threshold:
-                    pointer += 1
-                    box = net_output[0, 0, i, 3:]
+                    flag += 1
+                    box = net_output[0, 0, ax, 3:]
                     p1 = (int(box[0] * widthX), int(box[1] * heightX))
                     p2 = (int(box[2] * widthX), int(box[3] * heightX))
                     frmX = cv2.rectangle(frmX, p1, p2, (0, 255, 0), 3)
                     # Count Time Here
 					start_time = time.time()
-                    loop_dur=10.00
-                    duration = duration_prev+ loop_dur
+                    duration = duration_prev+ det_time
 			### Second time onwards
-            if pointer != counter:
+            if flag != counter:
                 counter_prev = counter
-                counter = pointer
+                counter = flag
                 if dur >= 3:
                     duration_prev = dur
                     dur = 0
