@@ -107,21 +107,21 @@ def infer_on_stream(args, client):
     # Video Streams Check
 	 input_type = args.input
     if input_type == 'CAM':
-        input_validated = 0
+        inputflag = 0
 
     # Image Input Check
     elif input_type.endswith('.jpg') or input_type.endswith('.bmp') or input_type.endswith('.gif') :
         single_image_mode = True
-        input_validated = input_type
+        inputflag = input_type
 
     # Video File Check
     else:
-        input_validated = input_type
+        inputflag = input_type
         assert os.path.isfile(input_type), "Input File doesn't exist or Invalid"
 
     ### TODO: Handle the input stream ### Opening Input using OpenCV
-    cap = cv2.VideoCapture(input_validated)
-    cap.open(input_validated)
+    cap = cv2.VideoCapture(inputflag)
+    cap.open(inputflag)
 
     widthX = int(cap.get(3))
     heightX = int(cap.get(4))
@@ -132,7 +132,7 @@ def infer_on_stream(args, client):
 	## Variable initialization
 	duration_prev = 0.0
     total_count = 0
-    dur = 0
+    duration_check = 0
     request_id=0
     current_count = 0
     counter = 0
@@ -182,21 +182,20 @@ def infer_on_stream(args, client):
             if flag != counter:
                 counter_prev = counter
                 counter = flag
-                if dur >= 3:
-                    duration_prev = dur
-                    dur = 0
+                if duration_check >= 3:
+                    duration_prev = duration_check
+                    duration_check = 0
                 else:
-                    dur = duration_prev + dur
+                    duration_check = duration_prev + duration_check
                     duration_prev = 0  # unknown, not needed in this case
             else:
-                dur += 1
-                if dur >= 3:
+                duration_check += 1
+                if duration_check >= 3:
                     current_count = counter
-                    if dur == 3 and counter > counter_prev:
+                    if duration_check == 3 and counter > counter_prev:
                         total_count += counter - counter_prev
-                    elif dur == 3 and counter < counter_prev:
-                        duration = int((duration_prev / 10.0) * 1000)
-                       
+                    elif duration_check == 3 and counter < counter_prev:
+                        duration = int((duration_prev / 10.0) * 1000)                       
 
             ### TODO: Calculate and send relevant information on ###
             ### current_count, total_count and duration to the MQTT server ###
